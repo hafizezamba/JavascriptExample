@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+        $(document).ready(function(){                                                               //sayfa hazır olduğunda
+
+            $("body").append("1.YÖNTEM" + "<br>");                                                  //1.Yöntem yazılarak bir alt satıra geçiliyor.
+
+            var personelBilgi = ["Hafize","Neşe","Uğur",18,23,26];                                  //Personel bilgi adında bir dizi tanımlanıyor.
+
+            $("body").append("İsim" + " " + "Yaş" + "<br>");                                        //isim yaş yazılarak bir alt satıra geçiliyor.
+            $("body").append(personelBilgi[0] + " " + personelBilgi[3] + "<br>");                   //0.indexdeki değer ve 3. indexdeki değer yazdırılıyor.
+            $("body").append(personelBilgi[1] + " " + personelBilgi[4] + "<br>");                   //1.indexdeki değer ve 4. indexdeki değer yazdırılıyor.
+            $("body").append(personelBilgi[2] + " " + personelBilgi[5] + "<br>" + "<br>");          //2.indexdeki değer ve 5. indexdeki değer yazdırılıyor.
+
+            $("body").append("2.YÖNTEM" + "<br>");                                                  //2.Yöntem yazılarak bir alt satıra geçiliyor.
+
+            var kisiBilgi = new Array();                                                            //kisiBilgi adında bir dizi oluşturuluyor.
+            kisiBilgi[0]="Hafize";                                                                  //0.index'e Hafize değeri veriliyor.
+            kisiBilgi[1]="Neşe";                                                                    //1.index'e Neşe değeri veriliyor.
+            kisiBilgi[2]="Uğur";                                                                    //2.index'e Uğur değeri veriliyor.
+            kisiBilgi[3]=18;                                                                        //3.index'e 18 değeri veriliyor.
+            kisiBilgi[4]=23;                                                                        //4.index'e 23 değeri veriliyor.
+            kisiBilgi[5]=26;                                                                        //5.index'e 26 değeri veriliyor.
+
+            $("body").append(kisiBilgi[0] + " " + kisiBilgi[3] + "<br>");                           //0.indexdeki değer ve 3. indexdeki değer yazdırılıyor.
+            $("body").append(kisiBilgi[1] + " " + kisiBilgi[4] + "<br>");                           //1.indexdeki değer ve 4. indexdeki değer yazdırılıyor.
+            $("body").append(kisiBilgi[2] + " " + kisiBilgi[5] + "<br>" + "<br>");                  //2.indexdeki değer ve 5. indexdeki değer yazdırılıyor.
+
+            $("body").append("ÇOK BOYUTLU DİZİ" + "<br>");                                          //ÇOK BOYUTLU DİZİ yazılıyor ve bir alt satıra geçiliyor.
+
+            var kisi=[["Hafize",18],["Neşe",23],["Uğur",26]];                                       //kişi isminde çoklu bir dizi oluşturuldu.
+
+            $("body").append(kisi[0][0] + " " + kisi[0][1]);                                        //0.indexdeki dizinin 0. indexi ve 0.indexdeki dizinin 1. indexi yazılıyor.
+
+            //Diziler aynı anda birden fazla değer saklar.
+            //Farklı tiplerde eleman tutabilirler.
+            //Başka dizileride içlerinde barındırabilirler.
+            //İndex 0'dan başlar.
+            //diziler tanımlanırken boyutları ve tipleri bildirilmez.
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

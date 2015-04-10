@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        $(document).ready(function(){
+
+            var x=10;                                                   //x değişkeni tanımlandı ve 10 değişkeni atandı.
+            if(x < 15){                                                 //yazılan koşul doğru ise if  içerisindeki kod çalışır.x 15'den küçükse
+                $("body").append("Sayı 15'den küçük");                  //Sayı 15'den küçük yazılır.
+            }
+            else{                                                       //yazılan koşul yanlış ise else içerisindeki kod çalışır.
+                $("body").append("Sayı 15'den büyük");                  //"Sayı 15'den büyük yazılır
+            }
+            $("body").append("<br>");                                   //bir alt satıra geçildi
+
+            var y=13;                                                   //y değişkeni tanımlandı ve 13 değeri atandı
+            if(y == 13){                                                //y 13'e eşitse
+                $("body").append("Sayı Doğru"+"<br>");                  //Sayı Doğru yazılır ve bir alt satıra geçildi
+            }
+            if(y===13){                                                 //y 13'e tip olarak dahi (tamamen) eşitse
+                $("body").append("Deger Number Tipinde" + "<br>");      //Deger Number Tipinde yazılır ve bir alt satıra geçilir.
+            }
+
+            //switch if-else'den farklı olarak tek değer alır ve o değerin bulunup bulunmadığını kontrol eder.
+
+            switch (x){                                                 //x değişkeninin değeri
+                case 5 :  $("body").append("Sayı Beş");                 //5 ise Sayı Beş yaz
+                    break;
+                case 8: $("body").append("Sayı Sekiz");                 //8 ise Sayı Sekiz yaz
+                    break;
+                case 10 : $("body").append("Sayı On");                  //10 ise Sayı On yaz
+                    break;
+                default : $("body").append("Farklı Bir Sayı");          //Koşullar sağlanmıyorsa default işletilir.
+                    break;                                              //Break koşuldan çıkmamızı sağlar
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

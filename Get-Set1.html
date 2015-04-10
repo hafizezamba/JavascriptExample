@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+        function testClass(){                                           //sınıf oluşturuldu.
+            this._variable1="Ali";                                      //private olarak _variable1 değişkeni tanımlandı.
+        }
+        Object.defineProperty(testClass.prototype,"property1",{         //defineProperty fonksiyonu ile sınıfa özellik eklenir.Öncelikle özellik eklenecek olan sınıf belirtilir sonra özelliğin adı belirtilir.
+            get:function() {                                            //get fonksiyonu ile özelliğin değeri okunur.
+                return this._variable1;                                 //özelliğin değeri _variable1 olarak belirtildi.
+            },
+            set:function(value){                                        //set fonksiyonu özelliğe değer atamak için kullanılır.
+                this._variable1=value;                                  //_variable1 özelliğine set fonksiyonun parametresi atandı.
+            }
+        });
+
+        var obj=new testClass();                                        //yeni nesne oluşturuldu.
+        alert(obj.property1);                                           //uyarı olarak property1 özelliği verildi.
+        obj.property1="Veli";                                           //property1 özelliğine nesne ile erişildi ve yeni bir değer atandı.
+        alert(obj.property1);                                           //alert ile özellik uyarı olarak verildi.
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+    "use strict";
+        $(document).ready(function(){
+            $("body").append("For döngüsü :" + "<br>");
+            var sonuc=0;                                            //sonuc adında bir değişken tanımlandı 0 değeri atandı.
+            for(var i=0; i<100; i++){                               //for döngüsü oluşturuldu.i değişkeni 0'a eşit ; i 100'den küçük olduğu sürece ; döngü işlemi gerçekleşince i'yi1 arttırır.
+                sonuc += i;                                         //sonuc değişkenine i eklendi
+            }
+            $("body").append(sonuc + "<br>");                       //sonuc değişkeni yazdırıldı ve bir alt satıra geçildi.
+            $("body").append("While döngüsü :" + "<br>");
+
+            var sayi=1;                                             //sayi değişkeni tanımlandı ve 1 değeri verildi.
+            var toplam=0;                                           //toplam değişkeni tanımlandı ve 0 değeri verildi.
+
+            //içerisinde sadece koşul kontrolü içerir.Değişkenin ilk değerinin verilmesi ve her dönüşte değerinin arttırılması işlemlerini kendisi yapmaz,
+            // döngü içerisinde bulunan kodun yapmasını bekler.
+
+            while(toplam < 10){                                     //toplam 10'da küçük olduğu sürece
+                $("body").append(sayi);                             //sayı değişkeni yazdırıldı
+                $("body").append("<br>");
+                sayi++;                                             //sayi değişkeni bir arttırıldı
+                toplam += sayi;                                     //toplam değişkenine sayi değişkeni eklendi
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

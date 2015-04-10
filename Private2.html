@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+<script type="text/javascript" language="JavaScript">
+    //MODULE PATTERN
+//private değişken ve fonksiyonlar fonksiyon içerisinde belirtilir.
+//return nesnesi içerisine public değişken veya fonksiyonlar tanımlanır.
+//Sadece singleton sınıflarda kullanılabilir.
+//Singleton sınıflarda kullanıldığı için bellekte fazla yer kaplama sıkıntısı yaşanmaz.
+//Buradaki fonlsiyonlardan private değişken function lara erişebiliriz çünkü buda bir closure çeşitidir.
+
+
+    var TestClass = function () {                       //testClass sınıfı oluşturuldu.
+
+        var variable = 5;                               // variable değişkeni oluşturuldu ve 5 değeri atandı.
+
+        var increaseVariable = function () {            //increaseVariable fonksiyonu oluşturuldu.
+            variable += 1;                              //variable değişkenine 1 arttırıldı.
+        };
+
+        return {
+            showVariable: function () {                 //showVariable fonksiyonun geriye
+                increaseVariable();                     //increaseVariable fonksiyonunu
+                alert(variable);                        //ve uyarı halinde variable değişkenini döndürdü.
+            }
+        }
+    }();
+
+    TestClass.showVariable();                           //testClass sınıfının showVariable fonksiyonu çağrıldı.
+
+    //Örneğimizde "variable" değişkeni ve "increaseVariable" fonksiyonu Private, "showVariable" fonksiyonu ise Public olarak tanımlanmıştır.
+    // Sınıf Singleton olarak tasarlandığı için Instance çıkartmadan direk sınıf üzerinden "showVariable" fonksiyonuna erişiyoruz.
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

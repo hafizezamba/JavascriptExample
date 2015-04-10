@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+
+        function class1(){                          //class1 adında bir sınıf oluşturuldu.
+            this.d1="Ali";                       //public olarak d1 değişkeni tanımlandı.
+        }
+
+        class1.prototype.isimVer=function(){        //class1'e prototype ile yeni fonksiyon eklendi.
+            alert(this.d1);                         //uyarı olarak class içindeki d1 değişkeni verildi.
+        }
+
+        class1.prototype.constructor=class1;        //class1'in constructor olduğu bildirildi.
+
+        var obj = new class1();                     //class1 'den yeni bir nesne oluşturuldu.
+        obj.isimVer();                              //isimVer fonksiyonu çağrıldı.
+
+        //public olması istenen değişkenler var yerine this anahtar sözcüğü ile tanımlanır.
+        //new ile sınıftan her nesne türetilişinde sınıftaki tüm varlıklar belleğe kopyalanır bu sebeple class 'a prototype ile function ekleriz.
+    </script>
+</head>
+<body>
+
+</body>
+</html>

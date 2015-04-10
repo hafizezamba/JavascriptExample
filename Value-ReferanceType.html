@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+        $(document).ready(function(){
+           var a=5;                                                  //a değişkeni tanımlandı ve 5 değeri atandı.
+            var b=a;                                                 //b değişkeni tanımlandı ve a değişkeni atandı.
+            a=9;                                                     //a değişkenine 9 değeri atandı.
+
+            $("body").append("ÖRNEK 1" + "<br>");                   //ÖRNEK 1 yazıldı ve bir alt satıra geçildi.
+            $("body").append(a);                                    //a değişkeni yazdırıldı.
+
+            $("body").append("<br>");                               //bir alt satıra geçildi.
+
+            $("body").append(b + "<br>"+ "<br>");                   //b değişkeni yazdırıldı ve 2 alt satıra geçildi.
+
+            $("body").append("ÖRNEK 2" + "<br>");                   //ÖRNEK 2 yazıldı ve bir alt satıra geçildi.
+
+            var x = { value : 5 };                                  //x nesne olarak tanımlandı ve 5 değeri verildi
+
+            var y = x;                                              //y değişkenine x nesnesinin referansı kopyalanıyor.
+
+            x.value = 10;                                           //x'in value özelliğine 10 değeri atanıyor.y x'in referansını kopyaladığı için y değişkeninin değeri de 10 oluyor.
+
+            $("body").append(x.value);                              //x 'in valuesi yazdırılıyor
+
+            $("body").append("<br>");                              //bir alt satıra geçiliyor
+
+            $("body").append(y.value);                             //y'nin valuesi yazdırılıyor.
+
+            //Numeric, String ve Boolean değişken tipleri değer tipleridir.Ram'de ayrı yerlerde dururlar.
+            //Diziler ve nesneler referans tiplidir.Ram'deki yerin referansı tutulur.
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

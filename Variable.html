@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+
+        //İçerisinde veri saklayan en küçük birimdir.Üç çeşit değişken tipi vardır.Değişkenler var komutu ile tanımlanır.
+        //1.Sayısal tipte değişkenler.
+        //2.Metinsel tipte değişkenler.
+        //3.Boolean tipte değişkenler.
+<<<<<<< HEAD
+        //aynı anda sadece tek bir kayıt tutabilirler..
+        // Eğer biz bir değişkene ard arda birkaç kez atama yaparsak, sadece son yaptığımız atama hafızada kalır ve diğerleri silinir.
+
+        "use strict";                                                        //geçmişte izin verilen ancak sonradan kaldırılan yöntemlerin kullanılmasını engelliyor.
+
+        $(document).ready(function(){                                        //Sayfa hazır olduğunda kod bloğu çalışır.(Sayfa yüklendikten sonra)
+
+            var degisken1=13;                                                //değişken1 isminde bir değişken tanımlandı Number tipndeki 13 değeri atandı.
+            var degisken2="Hafize";                                          //değişken2 isminde bir değişken tanımlandı String tipndeki Hafize değeri atandı.
+            var degisken3=true;                                              //değişken3 isminde bir değişken tanımlandı Boolean tipndeki true değeri atandı.
+            var degisken4;                                                   //Değişken sadece tanımlanmış bir deger atanmamıştır.
+
+            $("body").append(degisken1 + "<br>");                            //Body'nin içine değişken1 değeri yazıldı.
+            $("body").append(degisken2 + "<br>");                            //Değişken2 değeri yazıldı.
+            $("body").append(degisken3 + "<br>");                            //Değişken3 değeri yazıldı.
+            $("body").append(degisken4 + "<br>");                            //bir deger atanmadığı için undefined yani tanımlanmamış olarak görülür.
+            $("body").append("<br>");                                        //Bir satır aşağıya geçildi
+
+            var d;                                                           // d değişkeni tanımlandı.
+            d="Ugur";                                                        //d değişkenine Ugur değeri atandı
+            d="Nese";                                                        //d değişkenine Nese değeri atandı
+            d="Hafize";                                                      //d değişkenine Hafize değeri atandı
+
+            $("body").append(d);                                             //son atanan değer hafızada kalır.
+            $("body").append("Sayısal değişken örnekleri" + "<br>");
+
+            var d1=4+5;                                                      //d1 değişkeni tanımlandı değeri 4 ve 5 'in toplamı olarak belirtildi.(Number)
+            var d2= "4" + "5";                                               //d2 değişkeni tanımlandı değeri 4 ve 5 'in toplamı olarak belirtildi.(String)
+
+            $("body").append(d1 + "<br>");                                   //d1 yazdırıldı
+            $("body").append(d2 + "<br>");                                   //d2 yazdırıldı
+
+            $("body").append("Tür Dönüşüm İşlemleri" + "<br>");
+
+            var d5=true;                                                     //d5 değişkeni tanımlandı true değeri atandı.(Boolean)
+
+            var d3 = d1.toString();                                          //d1 değişkeni string'e dönüştürüldü ve d3'e atandı.
+            var d4 = Number(d2);                                             //d2 değişkeni number türüne dönüştürüldü ve d4'e atandı.
+
+            d3 += 10;                                                        //d3 değişkenine 10 eklendi
+            d4 +=10;                                                         //d4 değişkenine 10 eklendi
+
+            $("body").append(d3 + "<br>");                                   //d3 yazdırıldı bir alt satıra geçildi
+            $("body").append(d4 + "<br>");                                   //d4 yazdırıldı bir alt satıra geçildi
+            $("body").append( d5.toString()+ "<br>");                        //d5 değişkeni string'e dönüştürüldü bir alt satıra geçildi
+            $("body").append(Number(d5) + "<br>");                           //d5 değişkeni Number'a dönüştürüldü bir alt satıra geçildi
+=======
+
+
+        "use strict";                                                       //geçmişte izin verilen ancak sonradan kaldırılan yöntemlerin kullanılmasını engelliyor.
+
+        $(document).ready(function(){                                        //Sayfa hazır olduğunda kod bloğu çalışır.(Sayfa yüklendikten sonra)
+
+            var degisken1=13;
+            var degisken2="Hafize";
+            var degisken3=true;
+            var degisken4;                                                    //bir deger atanmamıştır.
+
+            $("body").append(degisken1 + "<br>");                             //Body'nin içine yazar.
+            $("body").append(degisken2 + "<br>");
+            $("body").append(degisken3 + "<br>");
+            $("body").append(degisken4 + "<br>");                             //bir deger atanmadığı için undefined yani tanımlanmamış olarak görülür.
+
+            //aynı anda sadece tek bir kayıt tutabilirler..
+            // Eğer biz bir değişkene ard arda birkaç kez atama yaparsak, sadece son yaptığımız atama hafızada kalır ve diğerleri silinir.
+
+            $("body").append("<br>");
+
+            var degisken;
+            degisken="Hafize";
+            degisken="Nese";
+            degisken="Ugur";
+
+            $("body").append(degisken);                                       //son atanan değer hafızada kalır.
+            $("body").append("Sayısal değişken örnekleri" + "<br>");
+
+            var d1=4+5;
+            var d2= "4" + "5";
+
+            $("body").append(d1 + "<br>");
+            $("body").append(d2 + "<br>");
+
+            $("body").append("Tür Dönüşüm İşlemleri" + "<br>");
+
+            var d5=true;
+
+            var d3 = d1.toString();                                           //d1 değişkeni string'e dönüştürüldü ve d3'e atandı.
+            var d4 = Number(d2);                                              //d2 değişkeni number türüne dönüştürüldü ve d4'e atandı.
+
+            d3 += 10;                                                         //değişkenlere 10 eklendi.
+            d4 +=10;
+
+            $("body").append(d3 + "<br>");
+            $("body").append(d4 + "<br>");
+            $("body").append( d5.toString()+ "<br>");
+            $("body").append(Number(d5) + "<br>");
+
+
+>>>>>>> origin/master
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+
+        function class1(param1){                                 //parametre alan bir class oluşturuldu.
+            this.d=param1;                                       //d değişkeni tanımlandı parametre değişkene atandı.
+        }
+
+        class1.prototype.degiskenVer=function(){                 //degiskenVer fonksiyonu oluşturuldu ve class1 değişkenine eklendi.
+            alert(this.d);                                       //d değişkeni uyarı olarak verildi.
+        };
+
+        function class2(param1,param2){                          //parametre alan bir class2 sınıfı oluşturuldu.
+            class1.call(this,param1);                            //1.class'ın kurucu metotları parametresi verilerek kopyalandı.
+            this.d2=param2;                                      //değişken 2 tanımlandı.2.parametre değişkene atandı.
+        }
+
+        class2.prototype = new class1;                           //1.class'ın prototype ile eklenen ögeleri kopyalandı.
+        class2.prototype.degiskenVer1=function(){                //degiskenVer1 fonksiyonu oluşturuldu.Class2 sınıfına eklendi.
+            alert(this.d2);                                      //uyarı olarak d2 değişkeni verildi.
+        };
+
+        var obj = new class2("Hafize","ZAMBA");                  //class2'den nesne türetildi.parametreleri verildi.
+
+        obj.degiskenVer();                                       //değişkenver fonksiyonu çağrıldı.
+        obj.degiskenVer1();                                      //değişkenver1 fonksiyonu çağrıldı.
+
+        //class2 ye 2 adet parametre vermemizin sebebi class1'i kalıtırken class1'e bir parametre geçme zorunluluğundan kaynaklanır.
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

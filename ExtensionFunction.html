@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+
+        //Extension function'lar dilin sahip olduğu sınıfları genişletmemizi/geliştirmemizi sağlanayan function'lardır.
+
+        String.prototype.test=function(value){          //string sınıfına prototype ile test adında bir function eklendi.
+            return this + value;                        //function geriye tanımlanmış olan String 'e fonksiyonun parametresini ekleyerek döndürüyor.
+          //fonksiyon içerisinde kullandığımız "this" kelimesi, fonksiyonun çağırılmasında kullanılan "variable" değişkeninin değerini bize verdi.
+        };
+
+        var variable="Ali";                             //variable değişkeni tanımlandı ve Ali değeri atandı.
+        alert(variable.test("veli"));                   //değişken tipinin test fonksiyonu kullanılarak oluşan değer uyarı olarak verildi.
+
+        Array.prototype.test=function(value){
+            return this[0] + value;                     //this anahtar sözcüğü değişkenin yani dizinin tamamına işaret ettiği için istenilen üyenin index i istendi.
+        };
+
+        var array = [5,2];                              //array oluşturuldu.
+        alert(array.test(8));                           //0. index e 8 eklenerek uyarı olarak verildi.
+
+        //"delete" operatörü ile sınıflara eklenen fonksiyonları silebiliriz.
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+        $(document).ready(function(){
+
+            $("body").append("ÖRNEK 1" + "<br>");                                       //ÖRNEK 1 yazıldı bir alt satıra geçildi
+
+           var telefon = new Object();                                                  //telefon isminde bir nesne tanımlandı.
+            telefon.marka="Samsung";                                                    //marka özelliğine Samsung değeri verildi.
+            telefon.model="Galaxy S2";                                                  //model özelliğine Galaxy S2 değeri verildi.
+            telefon.kamera="8 mp";                                                      //kamera özelliğine 8 mp değeri verildi.
+            telefon.dahiliBellek=16;                                                    //dahiliBellek özelliğine 16 değeri verildi.
+
+            $("body").append(telefon.marka + "<br>");                                   //telefon nesnesinin marka özelliği yazdırıldı ve bir alt satıra geçildi.
+            $("body").append(telefon.model + "<br>");                                   //telefon nesnesinin model özelliği yazdırıldı ve bir alt satıra geçildi.
+            $("body").append(telefon.kamera + "<br>");                                  //telefon nesnesinin kamera özelliği yazdırıldı ve bir alt satıra geçildi.
+            $("body").append(telefon.dahiliBellek + "<br>"+ "<br>");                    //telefon nesnesinin dahiliBellek özelliği yazdırıldı ve bir alt satıra geçildi.
+
+                                                                                        //Nesler içlerinde başka nesneleride barındırabilirler.
+
+            $("body").append("ÖRNEK 2" + "<br>");                                       //ÖRNEK 1 yazıldı bir alt satıra geçildi
+            var pc={                                                                    //pc nesnesi oluşturuldu
+                ram:"8GB",                                                              //ram özelliğine 8GB değeri verildi.
+                islemci:"i5",                                                           //islemci özelliğine i5 değeri verildi.
+                digerOzellik:{                                                          //pc nesnesi içerisine digerOzellik nesnesi eklendi
+                    klavye:"Q",                                                         //klavye özelliğine Q değeri verildi.
+                    ekranKarti:true                                                     //ekranKarti özelliğine true değeri verildi.
+                }
+            };
+            $("body").append(pc.ram + "<br>");                                          //pc nesnesinin ram özelliği yazdırıldı ve bir alt satıra geçildi.
+            $("body").append(pc.islemci+ "<br>");                                       //pc nesnesinin islemci özelliği yazdırıldı ve bir alt satıra geçildi.
+            $("body").append(pc.digerOzellik.klavye + "<br>");                          //pc nesnesinin içindeki digerOzellik nesnesinin klavye özelliği yazdırıldı ve bir alt satıra geçildi.
+            $("body").append(pc.digerOzellik.ekranKarti + "<br>");                      //pc nesnesinin içindeki digerOzellik nesnesinin ekranKarti özelliği yazdırıldı ve bir alt satıra geçildi.
+
+            //Nesneler dizileride içlerinde barındırabilir.
+            //Nesneler kompleks veri tiplerini saklamamıza imkan sağlar.
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

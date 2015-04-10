@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+        function testClass(){                                       //testClass sınıfı oluşturuldu.
+            this._variable1="Ali";                                  //private olarak _variable1 değişkeni tanımlandı ve Ali değeri tanımlandı.
+            this._variable2=56;                                     //private olarak _variable2 değişkeni tanımlandı ve 56 değeri atandı.
+        }                                                           //
+
+        testClass.prototype.constructor=testClass;                  //testClass'ın kurucu metot olduğu belirtildi.
+
+        Object.defineProperties(testClass.prototype,{               //defineProperties fonksiyonu ile sınıfa özellikler ekleniyor.İlgili class belirtiliyor.
+            "property1":{                                           //birinci özelliğin adı belirtiliyor.
+                get:function(){                                     //get fonksiyonu özelliğin değeri okunur.
+                    return this._variable1;                         //özelliğin değerine _variable1 değişkeni verildi.
+                },
+                set:function(value){                                //set fonksiyonu ile özelliğe değer ataması yapılır.
+                    this._variable1=value;                          //özelliğe value parametresi atandı.
+                }
+            },
+            "property2":{                                           //ikinci özelliğin ismi belirtildi.
+                get:function(){
+                    return this._variable2;
+                },
+                set:function(value){
+                    this._variable2=value;                          //set fonksiyonu ile parametre özelliğe atandı.
+                }
+            }
+        });
+
+        var obj = new testClass();                                  //yeni bir nesne türetildi.
+        alert(obj.property1);                                       //uyarı olarak 1. özellik verildi.
+        alert(obj.property2);                                       //uyarı olarak 2.özellik verildi.
+    </script>
+</head>
+<body>
+
+</body>
+</html>

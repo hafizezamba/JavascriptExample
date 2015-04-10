@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+
+        function testClass1(){                                          //testclass adında bir sınıf oluşturuldu.
+            this.variable1="Ali";                                       //public olarak variable1 adında değişken tanımlandı.
+        }
+        testClass1.prototype.uyari=function(){                          //sınıfa uyari adında bir fonksiyon eklendi.
+            alert(this.variable1);                                      //variable1 değişkeni uyarı olarak verildi.
+        };
+
+        function testClass2(){                                          //testClass sınıfından kalıtılacak testClass2 class'ı oluşturuldu.
+            testClass1.call(this);                                      //testClass1 sınıfı inheritance olarak bildirildi.classımız class1'in örneğini aldı.
+            this.variable2="Veli";                                      //variable2 adında ikinci değişken tanımlandı.
+        }
+
+        testClass2.prototype = new testClass1();                        //üst sınıfa prototype olarak tanımlanmış tüm varlıkların alt sınıfa kopyalanmasını sağlar.
+        testClass2.prototype.uyari2 = function(){                       //alt sınıfa uyari2 adında bir fonksiyon tanımlandı.
+            alert(this.variable2);                                      //uyarı olarak variable2 değişkeni verildi.
+        };
+
+        var obj=new testClass2();                                       //obj adında bir nesne türetildi.
+        obj.uyari();                                             //uyari fonksiyonu çağarıldı.
+        obj.uyari2();                                            //uyari2 fonksiyonu çağarıldı.
+
+        //call fonksiyonu ile kalıtılacak sınıfın içerisinde bulunan varlıkların örneği alınır.
+        //testClass2.prototype = new testClass1(); komutu ise kalıtılacak sınıfa prototype ile eklenen varlıkların örneğini alır.
+    </script>
+</head>
+<body>
+
+</body>
+</html>

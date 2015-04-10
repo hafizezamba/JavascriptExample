@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" language="JavaScript">
+
+        function testClass(){                                                       //testclass sınıfı oluşturuldu.
+            this.variable="Ali";                                                    //public olarak variable değişkeni oluşturuldu ve Ali değeri atandı.
+        }
+
+        testClass.prototype.test = function(x,y){                                   //class'a prototype ile test adında parametreli bir fonksiyon eklendi.
+            alert(x+y);                                                             //fonksiyonda geçilen parametreler toplandı ve uyarı olarak verildi.
+        };
+
+        //Kütüphaneden başka b,ir yerde                                             //yukarıdaki kodların farklı bir kütüphane içerisinde olduğunu varsayalım.
+
+        var originalFunction = testClass.prototype.test;                            //fonksiyonlar birinci sınıf nesne olduğu için fonksiyon ezilmeden orjinal fonksiyonu bir nesneye atayarak yedeğini alıyoruz.
+
+        testClass.prototype.test = function(x,y){                                   //testclass'a prototype ile test adında yeni bir fonksiyon daha oluşturuluyor.
+
+            x +=5;
+
+            originalFunction.call(this,x,y);
+
+        };
+
+        var obj = new testClass();                                                  //yeni bir test class nesnesi oluşturuldu.
+        obj.test(2,3);                                                              //test fonksiyonu çağrıldı ve parametreleri verildi.
+
+        //DİKKAT EDİLECEK KONULAR - MONKEY PATCH TEKNİĞİ
+        //Kendi yazmadığımız bir sınıfın, bir fonksiyonunda davranış değişikliğine gidersek, eğer ki bu fonksiyon sadece bizim tarafımızdan
+        // çağırılan fonksiyon ise tek sıkıntımız, sınıfın her yeni versiyonu çıktığında, değişikliğimizin yeni versiyona da uygun olup olmadığını
+        // teyit etme ihtiyacı olabilir. Ancak eğer ki bu fonksiyon, kütüphanedeki başka bir fonksiyon tarafından kullanılıyorsa, hele ki "_" ile
+        // başlayan Private bir fonksiyon ise, sınıfların hiç beklemediği cevapların  dönmesine sebep olabiliriz ve önceden kestirilmesi mümkün olmayan,
+        // aynı zamanda hatanın sebebinin de bulunması çok zor olan durumların oluşmasına sebep olabiliriz. Monkey Patch tekniği ile davranışsal
+        // değişikliğe uğratacağımız kütüphanenin tüm akış şemasına ve hatta bu kütüphaneyi kullanan başka kütüphaneler varsa, onların da akış şemasına
+        // hakim olmamız lazım ki, kritik bir hataya sebep olmayacağımıza ancak o zaman emin olabiliriz.
+
+        //Monkey Patch tekniği ile yaptığımız değişiklikler, bizim yazmadığımız ve başkaları tarafından kullanılan fonksiyonlarda, önceden kestirilmesi
+        // mümkün olmayan ve hatanın sebebinin de bulunması çok zor olan durumların oluşmasına sebep olabilir.
+    </script>
+</head>
+<body>
+
+</body>
+</html>

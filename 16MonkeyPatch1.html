@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" language="JavaScript">
+        function testClass(){                                                       //testclass sınıfı oluşturuldu.
+            this.variable="Ali";                                                    //variable değişkeni public olarak oluşturuldu ve Ali değeri atandı.
+        }
+
+        testClass.prototype.test = function(x,y){                                   //class'a prototype ile test adında parametreli bir fonksiyon eklendi.
+            alert(x+y);                                                             //fonksiyonda geçilen parametreler toplandı ve uyarı olarak verildi.
+        };
+
+        //yukarıdaki kodların farklı bir kütüphane içerisinde olduğunu varsayalım.
+
+        var originalFunction = testClass.prototype.test;                            //fonksiyonlar birinci sınıf nesne olduğu için fonksiyon ezilmeden orjinal fonksiyonu bir nesneye atayarak yedeğini alıyoruz.
+
+        testClass.prototype.test = function(x,y){                                   //testclass'a prototype ile test adında yeni bir parametreli fonksiyon eklendi.
+            alert(x*y);                                                             //geçilen parametreleri çarparak uyarı olarak ekrana basıyor.Burada orjinal fonksiyon ezilmiş oldu.
+        };
+
+        var obj = new testClass();                                                  //yeni bir test class nesnesi oluşturuldu.
+        obj.test(2,3);                                                              //test fonksiyonu çağrıldı ve parametreleri verildi.
+
+        testClass.prototype.test = originalFunction;                                //oluşturulan test fonksiyonuna orginalFunction verildi.Böylece orjinal function'u elde etmiş olduk.
+
+        obj.test(2,3);                                                              //daha önce oluşturulan nesne ile tekrar test function'u çağrıldı.
+
+        //Örneğin elimizdeki kütüphanenin bir fonksiyonu, bizim istediğimiz gibi davranmıyor olsun.
+        //Bu kütüphanenin içine girip kodlamasını değiştirmek yerine,çalışma zamanında bu şekilde dışarıdan müdahale etmemiz ve davranış değişikliğine sebep olmamız mümkün.
+        //Ya da unit test sırasında, istediğimiz bir fonksiyonu bu şekilde Mock/Stub haline çevirmemiz de mümkün.
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+        function calculator(){                                          //calculator adında bir function oluşturuldu.
+            this._result = 0;                                           //private olarak result değişkeni tanımlandı ve değer olarak 0 atandı.
+        }
+
+        calculator.prototype.constructor = calculator;                  //calculator function ' un constructors olduğu belirtildi.
+
+        calculator.prototype.add = function(value){                     //calculator function 'una add adında bir function eklendi.
+            this._result += value;                                      //parametredeki değeri result değişkenine ekledi.
+            return this;                                                //sınıfın kullanılan örneği olan nesneyi gösteren "this" operatörü return ile dönüldü
+        };
+        calculator.prototype.substract= function(value){                //calculator function 'una substract adında bir function eklendi.
+            this._result -=value;                                       //parametre değeri result değişkeninden çıkartıldı.
+            return this;
+        };
+        calculator.prototype.multiply = function(value){                //calculator function 'una multiply adında bir function eklendi.
+            this._result *=value;                                       //parametre değeri result değişkeni ile çarpıldı.
+            return this;
+        };
+        calculator.prototype.divide = function(value){                  //calculator function 'una divide adında bir function eklendi.
+            this._result /= value;                                      //result değişkeni parametre değerine bölündü.
+            return this;
+        };
+        calculator.prototype.showResult = function (value){             //calculator function 'una showResult adında bir function eklendi.
+            alert(this._result);                                        //uyarı olarak _result değişkeni verildi
+            return this;
+        };
+
+        var obj = new calculator();                                     //obj adında yeni bir nesne tanımlandı.
+
+        obj.add(7)                                                      //function çağırımları için nesneye gerek duyulmadan fonksiyonlar ard arda çağrıldı
+                .substract(3)
+                .multiply(4)
+                .divide(2)
+                .showResult();
+
+        //Chaining tekniği ile tek bir sınıfın birden fazla fonksiyonunu ard arda çağırma imkanına kavuşabiliriz.
+        //Bu tekniği kullanabilmemiz için, fonksiyonun geriye bir değer dönmeye ihtiyaç duymuyor olması gerekir.
+        //Bu tarz, geriye değer dönen fonksiyonlarda da bu tekniği kullanmak istiyorsak, sonucu "return" ile geri dönmek yerine, referans tipteki bir parametre üzerinden geri dönüş yapmayı düşünebiliriz.
+    </script>
+</head>
+<body>
+
+</body>
+</html>
